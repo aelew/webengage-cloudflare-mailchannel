@@ -29,14 +29,7 @@ const iEmailSchema = z.object({
       bcc: z.array(z.string().email()).optional(),
     }),
     attachments: z.array(iAttachmentSchema).optional(),
-  }),
-  metadata: z.object({
-    campaignType: z.string(),
-    custom: z.record(z.string()),
-    timestamp: z.number(),
-    messageId: z.string(),
-  }),
-  version: z.string(),
+  })
 });
 
 export type IContact = z.infer<typeof iContactSchema>;
